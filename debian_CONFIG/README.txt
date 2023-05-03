@@ -1,5 +1,5 @@
 #base system
-  #reset network settings in your router
+  #remove network-device in router
   #boot debian-amd64-netinst.iso
   #choose "Install" option in bootloader
   #choose "Guided - use entire disk and setup encrypted LVM" in "Partition disks" menu
@@ -29,6 +29,10 @@
     #on "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED" run: client$ rm ~/.ssh/known_hosts
       ssh$ cryptroot-unlock
     client$ ssh root@'IPV4'
+
+  #upload from ./root/* to /root/*
+    client$ ssh root@'IPV4' "rm -r /root/*"
+    client$ scp -r ./root/* root@'IPV4':/root/
 
   #install node
     server$ apt install curl
