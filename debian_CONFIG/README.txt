@@ -45,7 +45,7 @@
       Type=simple
       User=root
       ExecStart=/usr/bin/node 'PATHTOFILE' #/file.mjs
-      WorkingDirectory=$'SERVICENAME'
+      WorkingDirectory='FOLDERTOFILE' #/folder
       Restart=on-failture
       [Install]
       WantedBy=multi-user.target
