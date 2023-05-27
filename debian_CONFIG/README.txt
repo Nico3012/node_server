@@ -38,13 +38,13 @@
     server$ apt install curl
     server$ curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && apt install nodejs
     server$ nano /root/.bashrc
-      'SERVICENAME'="'FOLDERTOFILE'"
+      'SERVICENAME'="'FOLDERTOFILE'" #/folder
     server$ source /root/.bashrc
     server$ nano /etc/systemd/system/'SERVICENAME'.service
       [Service]
       Type=simple
       User=root
-      ExecStart=/usr/bin/node 'PATHTOFILE'
+      ExecStart=/usr/bin/node 'PATHTOFILE' #/file.mjs
       WorkingDirectory=$'SERVICENAME'
       Restart=on-failture
       [Install]
