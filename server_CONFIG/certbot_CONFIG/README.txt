@@ -1,7 +1,7 @@
 #Linux command line
   #install certbot
     server$ apt install certbot
-    server$ certbot certonly --standalone -d 'YOURDOMAIN' -d 'YOURSUBDOMAIN'
+    server$ certbot certonly --standalone -d 'YOURDOMAIN' -d 'YOURSUBDOMAIN' -d 'YOURSUBDOMAIN'
       #cert: /etc/letsencrypt/live/'YOURDOMAIN'/fullchain.pem #dont move away!
       #key: /etc/letsencrypt/live/'YOURDOMAIN'/privkey.pem #dont move away!
 
