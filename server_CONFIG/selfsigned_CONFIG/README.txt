@@ -5,7 +5,7 @@
 
   $ openssl genrsa -out 'YOURDOMAIN'.key 4096
   $ openssl req -new -sha256 -subj "/CN='YOURNAME'" -key 'YOURDOMAIN'.key -out 'YOURDOMAIN'.csr
-  $ echo "subjectAltName=DNS:'YOURDOMAIN',DNS:'YOURSUBDOMAIN',IP:'YOURIPADDRESS'" >> 'YOURDOMAIN'.ext
+  $ echo "subjectAltName=DNS:'YOURDOMAIN',DNS:'YOURSUBDOMAIN',DNS:'YOURSUBDOMAIN',IP:'YOURIPADDRESS'" >> 'YOURDOMAIN'.ext
   $ openssl x509 -req -sha256 -days 365 -in 'YOURDOMAIN'.csr -CA ca.pem -CAkey ca.key -out 'YOURDOMAIN'.crt -extfile 'YOURDOMAIN'.ext -CAcreateserial
 
 #Install
