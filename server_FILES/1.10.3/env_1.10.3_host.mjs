@@ -1,4 +1,5 @@
 export default {
     cert: "./public.crt",
-    key: "./private.key"
+    key: "./private.key",
+    dir: "./app"
 };
