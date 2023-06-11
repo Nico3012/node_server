@@ -6,9 +6,9 @@
       #key: /etc/letsencrypt/live/'YOURDOMAIN'/privkey.pem #dont move away!
 
   #renew cert
-    server$ #stop http:80 service
+    server$ #stop http:80 and https:443 services
     server$ certbot renew
-    server$ #start http:80 service
+    server$ #start http:80 and https:443 services
 
   #remove cert
     server$ certbot delete
