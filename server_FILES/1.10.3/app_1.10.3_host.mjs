@@ -17,7 +17,7 @@ https.createServer({ cert: await fs.promises.readFile(env.cert), key: await fs.p
 
     new Promise((resolve, reject, body = "") => req.on("data", data => body += data).on("end", () => resolve(body))),
 
-    (path, search = "", status = 200) => new Promise((resolve, reject) => fs.promises.stat("./app" + path).then(data => data.isFile() ? fs.createReadStream("./app" + path).on("open", () => res.writeHead(status, {
+    (dir, path, search = "", status = 200) => new Promise((resolve, reject) => fs.promises.stat(dir + path).then(data => data.isFile() ? fs.createReadStream(dir + path).on("open", () => res.writeHead(status, {
         "Content-Type": path.endsWith(".txt") ? "text/plain" : path.endsWith(".html") ? "text/html" : path.endsWith(".css") ? "text/css" : path.endsWith(".js") ? "text/javascript" : path.endsWith(".json") ? "application/json" : path.endsWith(".wasm") ? "application/wasm" : path.endsWith(".pdf") ? "application/pdf" : path.endsWith(".png") ? "image/png" : path.endsWith(".woff") ? "font/woff" : path.endsWith(".woff2") ? "font/woff2" : "application/octet-stream"
     })).pipe(res).on("finish", resolve) : data.isDirectory() ? res.writeHead(308, {
         "Location": path + "/" + search
