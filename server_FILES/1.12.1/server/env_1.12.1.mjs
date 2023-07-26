@@ -1,5 +1,5 @@
 export default {
-    secure: false,
+    secure: true,
     // if secure
     cert: "./localhost.crt",
     key: "./localhost.key",
