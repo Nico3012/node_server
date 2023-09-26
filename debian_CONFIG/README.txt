@@ -48,6 +48,6 @@
     server$ systemctl start 'SERVICENAME'.service
     #on update file run: server$ systemctl restart 'SERVICENAME'.service
 
-  #VS Code Server
+  #install vscode server
     server$ apt install curl
-    #installation is done via VS Code ssh extension
+    #installation is done via vscode ssh extension
