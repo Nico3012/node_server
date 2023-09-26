@@ -9,6 +9,9 @@
   #get ip
     server$ ip a
 
+  #update list of available packages
+    server$ apt update
+
   #install ssh
     server$ apt install dropbear-initramfs openssh-server
     client$ apt install openssh-client
