@@ -33,8 +33,11 @@
       ssh$ cryptroot-unlock
     client$ ssh root@'IPV4'
 
+  #install node
+    server$ apt install curl
+    server$ curl -fsSL https://deb.nodesource.com/setup_21.x | bash - && apt-get install -y nodejs
+
   #install service
-    server$ apt install nodejs
     server$ nano /etc/systemd/system/'SERVICENAME'.service
       [Service]
       Type=simple
@@ -47,7 +50,3 @@
     server$ systemctl enable 'SERVICENAME'.service
     server$ systemctl start 'SERVICENAME'.service
     #on update file run: server$ systemctl restart 'SERVICENAME'.service
-
-  #install vscode server
-    server$ apt install curl
-    #installation is done via vscode ssh extension
